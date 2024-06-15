@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Authentication</title>
+    <style>
+        body {
+            background-image: url('/static/b1.png');
+            background-size: 110% 110%; 
+            background-position: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: rgb(15, 1, 1); 
+            min-height: 70vh;
+            overflow-x: hidden; 
+        }
+
+        .container {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 39px;
+            max-width: 300px;
+            margin: 0 auto;
+            text-align: center;
+            background-color: #f6e9e971;
+            margin-top: calc(50vh - 150px);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        input[type="email"],
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #uploadField {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form method="POST" action="/verify_otp">
+            <label for="email">Re-Enter Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="otp">Enter OTP:</label>
+            <input type="text" id="otp" name="otp" required>
+            <input type="submit" value="Verify OTP">
+        </form>
+    </div>
+
+    <div id="uploadField">
+        <form method="POST" action="/upload_image" enctype="multipart/form-data">
+            <label for="image">Select an image:</label>
+            <input type="file" id="image" name="image" accept="image/*">
+            <input type="submit" value="Upload Image">
+        </form>
+    </div>
+
+    <script>
+        function showUploadField() {
+            document.getElementById('uploadField').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
+otp veri

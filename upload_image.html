@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image</title>
+    <style>
+        body {
+            background-image: url('/static/c1.png');
+            background-size: 100% 100%;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: rgb(15, 1, 1);
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            background-color: #f6e9e971;
+            border: 2px solid #fff;
+            margin-top: 100px;
+            margin-right: 170px;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            width: 350px;
+            height: 350px;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .custom-file-upload {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .consent-checkbox {
+            margin-top: 20px;
+        }
+
+        .speak-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Upload Your Image</h2>
+        <form method="POST" action="/upload_image" enctype="multipart/form-data">
+            <label for="file-upload" class="custom-file-upload">Browse</label><br>
+            <br>
+            <input id="file-upload" type="file" name="image" accept="image/*" required>
+            <input type="checkbox" id="consent" class="consent-checkbox" required>
+
+            <label for="consent">I hereby confirm that the image uploaded by me depicts instances of child labor within it, and I am prepared for the necessary actions to be taken in response.</label>
+
+            <br>
+            <br>
+            <button type="submit">Upload</button>
+        </form>
+
+    </div>
+
+    <script>
+        const consentCheckbox = document.getElementById("consent");
+        const consentStatement = document.querySelector('label[for="consent"]').textContent;
+
+        consentCheckbox.addEventListener("change", function() {
+            if (this.checked) {
+                const utterance = new SpeechSynthesisUtterance(consentStatement);
+                speechSynthesis.speak(utterance);
+            }
+        });
+    </script>
+</body>
+</html>
