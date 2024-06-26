@@ -10,6 +10,22 @@ C.L.A.S.S (Child Labor Automated Surveillance System) is a software solution des
 - Real-time notifications to authorities
 - Analytical tools for data visualization and reporting
 
+## Technologies Used
+
+- **Geolocation**: Integrates Folium for visualizing reported incidents on a map.
+  
+- **Web Scraping**: Uses Selenium for gathering additional information from various sources on the web.
+  
+- **Database**: Stores and manages reported cases and related data.
+  
+- **Web Application**: Provides a user-friendly interface accessible via web browsers.
+  
+- **Python**: Programming language used for backend processing and machine learning models.
+  
+- **Django**: Python web framework for building the application backend.
+  
+- **JavaScript/HTML/CSS**: Frontend technologies for user interface development.
+
 ## Installation
 
 To install and run C.L.A.S.S on your local machine, follow these steps:
