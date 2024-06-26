@@ -17,7 +17,8 @@ To install and run C.L.A.S.S on your local machine, follow these steps:
 1. Clone the repository
    ```bash
    git clone https://github.com/ak517ayakshay/C.L.A.S.S.git
-##Affiliations
+
+## Affiliations
 This project is developed in collaboration with the Indian Institute of Science (IISc). We acknowledge the support and resources provided by IISC bengaluru.
 
 ## Research Paper
